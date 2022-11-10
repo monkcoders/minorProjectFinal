@@ -2,15 +2,32 @@ const express = require("express")
 const app=express();
 const con  = require('./config');
 
+const questionGetView = function(req, res, next) {
+    
+  var userData= {u_no:req.query.u_no}
+
+  
+  var sql=   `select s.s_name, q.Question, q.Option1, q.Option2, q.Option3, q.Option4, q.Answer, q.Q_id from subjects as s, questionbank as q where s.s_id =q.Subject and q.submitted_by=(select user_id from login_credentials as u where u.u_no=${userData.u_no});`;
+  con.query(sql, function (err, data, fields) {
+  if (err) throw err;
+  console.log(data);
+  
+  res.render('question', { page_name:'submitted', userData:userData, questionData: data});
+});
+}
 
 const questionbankGetView = function(req, res, next) {
     var p = req.query.p//profession
+    var u_no = req.query.u_no;
+    console.log(u_no);
+
     
     var sql='select s.s_name, q.Question, q.Option1, q.Option2, q.Option3, q.Option4, q.Answer, q.Q_id from subjects as s, questionbank as q where s.s_id =q.Subject;';
     con.query(sql, function (err, data, fields) {
     if (err) throw err;
     console.log(data);
-    res.render('questionbank', {p:p, page_name:'questionbank',  userData: data});
+    
+    res.render('questionbank', {p:p, page_name:'questionbank', userData:{u_no}, questionData: data});
   });
 }
 
@@ -22,7 +39,7 @@ const editQuestionGetView = (req,res,next)=>{
     if (err) throw err;
     console.log(data);
     // console.log(data[0].s_name);
-    res.render('edit', {  data: data[0]});
+    res.render('edit', {page_name:'edit',  data: data[0]});
   });
 }
 
@@ -53,7 +70,7 @@ const deleteQuestionGetView = (req,res,next)=>{
     if (err) throw err;
     console.log(data);
     // console.log(data[0].s_name);
-    res.render('delete', {  data: data[0]});
+    res.render('delete', { page_name:'delete', data: data[0]});
   });
 }
 
@@ -77,4 +94,4 @@ const deleteQuestionDeleteView =(req,res,next)=>{
 
 
 
-module.exports= {questionbankGetView,editQuestionGetView,editQuestionPutView,deleteQuestionGetView,deleteQuestionDeleteView};
+module.exports= {questionGetView,questionbankGetView,editQuestionGetView,editQuestionPutView,deleteQuestionGetView,deleteQuestionDeleteView};
