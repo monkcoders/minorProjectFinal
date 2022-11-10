@@ -8,7 +8,7 @@
 
 </head>
 <!-- navbar included -->
-<%- include('nav.ejs');  %>
+<%- include('dashnav.ejs');  %>
 
 <section class="subject-dropdown">
   <select name="subjectFilter" id="subjectFilter">
@@ -29,8 +29,12 @@
           <th>Option C</th>
           <th>Option D</th>
           <th>Correct Answer</th>
+          <% if(p===1){  %> 
           <th>Edit</th>
           <th>Delete</th>
+          <% }  %>
+
+           
         </tr>
       </thead>
       <%
@@ -50,10 +54,12 @@
           <td><%=data.Option4 %></td>
           <td><%=data.Answer %></td>
 
+          <% if(p===1){  %> 
+            <td><a href="/questionbank/edit?qid=<%=data.Q_id%>">Edit</a></td>
+            <td><a href="/questionbank/delete?qid=<%=data.Q_id%>">Delete</a></td>
+          <% }  %>
 
-
-          <td><a href="/questionbank/edit?qid=<%=data.Q_id%>">Edit</a></td>
-          <td><a href="/questionbank/delete?qid=<%=data.Q_id%>">Delete</a></td>
+          
         </tr>
       </tbody>
       <%  i++; }) %>
@@ -72,12 +78,7 @@
   $(document).ready(function() {
     var searchKeyword = $('#subjectFilter').value;
     var datatable = $('#qTable').DataTable(
-      {"columnDefs": [
-            {
-                "targets": [7 ],
-                "visible": false
-            }
-        ]}
+      
     );
     $('.subject-dropdown').on('change', function(e){
       var subject = $(this).val();

@@ -6,7 +6,7 @@ const con  = require('./config');
 
 const registerGetView = (req, res) => {
     
-    res.render("register",{});
+    res.render("register",{page_name:'register'});
 }
 
 const registerPostView = (req,res)=>{
@@ -18,16 +18,21 @@ const registerPostView = (req,res)=>{
       var sql = `insert into login_credentials(first_name,last_name,email_id,phone_no,user_id,passwd,profession) values('${r.first_name}','${r.last_name}', '${r.email_id}', ${r.phone_no}, '${r.user_id}','${r.password}',${p});`;
         con.query(sql, function (err, result) {
           if(err) {
-            throw err;}  
+            throw err;}
+
           else console.log('record inserted');
         });
+
     });
-    res.redirect('/');
+
+
+
+    res.redirect('/login');
 
 }
 
 const loginGetView =(req,res)=>{
-    res.render("login",{});
+    res.render("login",{page_name:'login'});
 }
 const loginPostView = (req,res)=>{
     console.log("inside login get ");
@@ -35,7 +40,7 @@ const loginPostView = (req,res)=>{
     var r = req.body;
     
     con.connect(function(err) {
-        var sql = `select first_name,profession from login_credentials where email_id ='${r.emailId}' and passwd='${r.password}' `;
+        var sql = `select first_name,u_no,profession from login_credentials where email_id ='${r.emailId}' and passwd='${r.password}' `;
           con.query(sql, function (err, result,field) {
             if(err) throw err;  
             
@@ -43,9 +48,11 @@ const loginPostView = (req,res)=>{
                 
                 if(result && result.length!=0){
 
-                    console.log(result[0].first_name);
+                    console.log(result[0].u_no);
+                    const u_no =  "u_no="+result[0].u_no;
                     var nameProfession=result[0];
-                    res.redirect('/');
+                    res.redirect('/dashboard?'+u_no);
+
                 // res.redirect('/dashboard',{name:nameProfession.first_name});
                 }
                 // console.log('record inserted');

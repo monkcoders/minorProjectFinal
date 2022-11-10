@@ -1,0 +1,33 @@
+<body>
+    <div class="page-container">
+    <div class="wrap-content">
+    <!-- navbar  -->
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+            <a class="navbar-brand navbar-logo" href="#"><img class="logo" src="/images/quizee.png" alt=""></a>
+            <a class="navbar-toggler mr-4" type="a" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <div class="hori-selector">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>
+                    <li <% if (page_name === 'dashboard') { %> class="nav-item  nav-item-top mt-lg-0 mt-4 active" <%} else { %> class="nav-item  nav-item-top mt-lg-0 mt-4 "<% } %> >
+                        <a class="nav-link" href="/dashboard?u_no=<%= userData.u_no%>"><i class="fa-solid fa-house"></i>Dashboard</a>
+                    </li>
+                    <li <% if (page_name === 'submit') { %> class="nav-item active" <%} else { %> class="nav-item"<% } %> >
+                        <a class="nav-link" href="/submit?u_no=<%= userData.u_no%>" ><i class="fa-solid fa-clipboard-question"></i>Submit Question</a>
+                    </li>
+                    <li <% if (page_name === 'submitted') { %> class="nav-item active" <%} else { %> class="nav-item"<% } %> >
+                        <a class="nav-link" href="/submitted?u_no=<%= userData.u_no%>" ><i class="fa-solid fa-eye"></i>View Questions</a>
+                    </li>
+                    <li <% if (page_name === 'questionbank') { %> class="nav-item mr-lg-4 mb-lg-0 mb-4 me-lg-4 active" <%} else { %> class="nav-item mr-lg-4 mb-lg-0 mb-4 me-lg-4"<% } %> >
+                        <a class="nav-link" href="/questionbank?u_no=<%= userData.u_no%>" ><i class="fa-solid fa-book"></i>View Questionbank</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>

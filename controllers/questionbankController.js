@@ -4,11 +4,13 @@ const con  = require('./config');
 
 
 const questionbankGetView = function(req, res, next) {
+    var p = req.query.p//profession
+    
     var sql='select s.s_name, q.Question, q.Option1, q.Option2, q.Option3, q.Option4, q.Answer, q.Q_id from subjects as s, questionbank as q where s.s_id =q.Subject;';
     con.query(sql, function (err, data, fields) {
     if (err) throw err;
     console.log(data);
-    res.render('questionbank', {  userData: data});
+    res.render('questionbank', {p:p, page_name:'questionbank',  userData: data});
   });
 }
 
