@@ -1,0 +1,90 @@
+#question-bank{
+    background-color: aliceblue;
+
+}
+
+/* assesement  */
+#assesment{
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(252,252,252,1) 75%, rgba(238,237,237,1) 100%);
+}
+
+#features{
+    background: rgb(238,237,237);
+    background: linear-gradient(180deg, rgba(238,237,237,1) 0%, rgba(240,248,255,1) 100%);
+}
+
+#why {
+    background: rgb(240,248,255);
+    background: linear-gradient(180deg, rgba(240,248,255,1) 0%, rgba(240,248,255,1) 0%, rgba(240,248,255,1) 0%, rgba(196,192,192,1) 65%, rgba(201,197,197,1) 100%);
+}
+
+#who{
+    background: rgb(240,248,255);
+background: linear-gradient(180deg, rgba(240,248,255,1) 0%, rgba(200,196,196,1) 0%, rgba(230,225,225,1) 43%, rgba(229,228,231,1) 87%, rgba(216,216,218,1) 97%, rgba(42,124,247,1) 100%);
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h3{
+    margin: 30px;
+}
+.features-img{
+    width: 100px;
+}
+.container-fluid{
+    padding: 3% 10%;
+}
+.left-container{
+    margin: auto;
+}
+
+.right-container{
+    margin: auto;
+}
+
+/* swipe right button  */
+
+
+.butn{
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .butn span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .butn:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #a0b4d9;
+    transition: all .35s;
+  }
+  
+  .butn:hover{
+    color: #fff;
+  }
+  
+  .butn:hover:after{
+    width: 100%;
+  }

@@ -1,0 +1,40 @@
+/* all links  */
+a{
+  text-decoration: none;
+  color: #0d6efd;
+}
+a:hover{
+  color: #0c67ec;
+}
+
+
+/* titles */
+.title{
+  text-align: center;
+  margin-bottom: 20px;
+  color: darkcyan;
+}
+
+
+/* student login section  */
+
+
+
+/* teacher login section  */
+.hide{
+  display: none;
+}
+
+
+/* for obile devices  */
+@media (max-width: 778px){
+  
+  .img-fluid {
+    max-width: 50%;
+    height: auto;
+}
+
+
+
+
+}

@@ -1,0 +1,105 @@
+<%- include('head.ejs'); %>
+<!-- include extra files and title -->
+<title>Submit Question</title>
+<link rel="stylesheet" href="styles/submit.css">
+</head>
+
+<!-- navbar included -->
+<%- include('nav.ejs');  %> 
+
+<section id="submit-question">
+    <div class="container-fluid text-center py-4">
+
+        <form method="post" action="/questionbank/edit"  class="needs-validation"  >
+            <div class="container-fluid text-start col-lg-6 col-10">
+                <div>
+                    <!-- subject input  -->
+                    
+                    <select name="subject" id="subject" class="form-select form-select-lg my-2  " value="<%= data.Subject %> " required>                        
+                        <option value="501">Theory of Computation</option>
+                        <option value="502">Database Management System</option>
+                        <option value="503">Internet and Web Technologies</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid state.
+                      </div>
+                </div>
+
+                <!-- question input -->
+                <div class="form-floating my-2">
+                    <textarea class="form-control" value="<%= data.Question%>" name="questionText" id="questionText" placeholder="this is question" required></textarea>
+                    <label for="questionText">Enter Question</label>
+                </div>
+
+                <!-- Option A -->
+                <div class="row">
+                    
+                    <div class="form-floating col-sm-6 my-2">
+                        
+                        <textarea class="form-control"  name="optionA" value="<%= data.Option1 %> " id="optionA" placeholder="enter Option A here" required></textarea>
+                        <label for="optionA" class="px-4">Enter Option A</label>
+                    </div>
+                
+                    <!-- Option B -->
+
+                    <div class="form-floating col-sm-6 my-2">
+                        <textarea class="form-control" name="optionB" value="<%= data.Option2 %> "  id="optionB" placeholder="enter Option B here" required></textarea>
+                        <label for="optionB" class="px-4">Enter Option B</label>
+                    </div>
+                    </div>
+               
+                <div class="row">
+                    <!-- option c  -->
+                    
+                    <div class="form-floating col-sm-6 my-2">
+                        
+                        <textarea class="form-control" name="optionC" value="<%= data.Option3 %> "  id="optionC" placeholder="enter Option C here" required></textarea>
+                        <label for="optionC" class="px-4">Enter Option C</label>
+                    </div>
+                    <!-- Option D -->
+
+                    <div class="form-floating col-sm-6 my-2">
+                        
+                        <textarea class="form-control" name="optionD" value="<%= data.Option4 %> "  id="optionD" placeholder="enter Option D here" required></textarea>
+                        <label for="optionD" class="px-4">Enter Option D</label>
+                    </div>
+                    </div>
+               
+                
+                    <select name="correctOption" id="correctOption" value="<%= data.Answer %> " class="form-select form-select-lg my-3" required>
+                        <option selected disabled value="">Select the correct option fro the following</option>
+                        <option value="option1">Option A</option>
+                        <option value="option2">Option B</option>
+                        <option value="option3">Option C</option>
+                        <option value="option4">Option D</option>
+                    </select>
+                    <input type="hidden" name="qid" id="qid">
+                    <div class="text-center">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Submit" onclick="alertSubmitted()">
+                </div>
+            </div>
+        </form>
+        <script>
+            document.getElementById('subject').value = '<%= data.Subject %>' ;
+            document.getElementById('questionText').value = '<%= data.Question %>' ;
+            document.getElementById('optionA').value = '<%= data.Option1 %>' ;
+            document.getElementById('optionB').value = '<%= data.Option2 %>' ;
+            document.getElementById('optionC').value = '<%= data.Option3 %>' ;
+            document.getElementById('optionD').value = '<%= data.Option4 %>' ;
+            document.getElementById('correctOption').value = '<%= data.Answer %>' ;
+            document.getElementById('qid').value = '<%=data.Q_id%>';
+
+
+            function alertSubmitted(){
+                window.alert("Question Updated!!");
+            }
+        </script>
+        
+    </div>
+</section>
+
+</div>
+<%- include('footer.ejs') %> 
+</body>
+</html>
+

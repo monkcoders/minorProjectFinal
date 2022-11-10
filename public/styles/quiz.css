@@ -1,0 +1,68 @@
+/* header  */
+.header
+{
+    background: rgb(219, 226, 238);
+}
+
+.container-fluid{
+    padding: 1% 5% ;
+  }
+  
+
+.candidate-img{
+    height: 100px;
+    width: 100px;
+}
+
+
+.page-container{
+    background-color: antiquewhite;
+}
+
+.questions{
+    margin-top: 20px;
+}
+/* status card  */
+
+
+/* status btn  */
+
+.status-btn{
+    margin: 4px;
+    border-radius: 100%;
+}
+
+/* questions button  */
+.q-btn{
+    margin: 10px 4px;
+}
+
+.q-disabled{
+    background-color: #146c43;
+}
+.btn-container{
+    position: relative;
+   
+}
+
+.btn-container-left{
+    position: absolute;
+    left: 1rem;
+    
+}
+
+.btn-container-right{
+    position: absolute;
+    right: 1rem;
+}
+
+
+  /* all links  */
+a{
+    text-decoration: none;
+    color: #0d6efd;
+  }
+  a:hover{
+    color: #0c67ec;
+  }
+  

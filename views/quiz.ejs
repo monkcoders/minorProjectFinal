@@ -1,0 +1,141 @@
+<%- include('head.ejs'); %>
+<!-- include extra files and title -->
+<title>Quiz</title>
+<link rel="stylesheet" href="/styles/quiz.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="wrap-content">
+    <section class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-4 justify-content-center text-center">
+                    <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                        alt="candidate Image" class="candidate-img img-fluid">
+                </div>
+                <div class="col-lg-2 col-4 justify-content-left py-1 my-2">
+                    <h6>Candidate Name </h6>
+                    <h6>Exam Name </h6>
+                    <h6>Subject Name </h6>
+
+
+                </div>
+                <div class="col-lg-6 col-4  justify-content-left py-1 my-2">
+                    <h6>: <span id="candidate-name"><%= candidateName %> </span></h6>
+                    <h6>: <span id="exam-name"><%= exam %></span></h6>
+                    <h6>: <span id="subject-name"><%= subject %></span></h6>
+
+                </div>
+
+                <div class="col-lg-2 justify-content-center text-center py-1 my-2">
+                    <h6>Remaining Time </h6>
+                    <h6><span id="remaining-time"><%= time%></span></h6>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="body-question">
+        <div class="container-fluid py-4">
+            <div class="row ">
+                <div class="col-lg-8 mt-3">
+                    <!-- quetion card section -->
+
+                    <section class="question">
+                        <div class="card border-info">
+                            <div class="card-header bg-info text-white">Question <span id="question-number"><%= qNo %></span>
+                            </div>
+                            <div class="card-body">
+                                <p id="question-text"><%= question %></p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question-option" id="op1"
+                                        value="op1">
+                                    <label class="form-check-label" for="op1"> <%= optionA %> </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question-option" id="op2"
+                                        value="op2">
+                                    <label class="form-check-label" for="op2"><%= optionB %> </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question-option" id="op3"
+                                        value="op3">
+                                    <label class="form-check-label" for="op3"><%= optionC %></label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question-option" id="op4"
+                                        value="op4">
+                                    <label class="form-check-label" for="op4"><%= optionD%></label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="question-buttons">
+                        <div class="container-fluid btn-container">
+                            <div class="btn-container-left">
+                                <button class="btn btn-success q-btn" onclick="saveAndContinue()">Save & Next</button>
+                                <button class="btn btn-success q-btn" onclick="clearButton()">Clear</button>
+                            </div>
+                            <div class="btn-container-right">
+                                <button class="btn btn-success q-btn" id="prev-btn" onclick="prevQuestion()">Previous</button>
+                                <button class="btn btn-success q-btn" id="next-btn" onclick="nextQuestion()">Next</button>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-4 ">
+                    <!-- question status buttons -->
+                    <section class="status pb-2">
+                        <div class="card card-status">
+                            <div class="card-body">
+                                <h5 class="card-title">Question status </h5>
+                                <div class="row">
+
+                                    <div class="col-xl-6">
+                                        <button class="btn btn-secondary status-btn" id="notVisitedQ">21</button>
+                                        <span>Not visited</span>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <button class="btn btn-danger status-btn" id="remainingQ">21</button>
+                                        <span>Not Answered</span>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <button class="btn btn-success status-btn" id="attemptedQ">21</button>
+                                        <span>Answered</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- all questions  -->
+
+                    <section class="all-questions">
+                        <div class="card card-status">
+                            <div class="card-body">
+                                <h5 class="card-title">Questions </h5>
+                                <div class="row" id="all-question-section">
+                                    <!--questions in buttons  -->
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<%- include('footer.ejs') %> 
+<script src="/js/quiz.js"></script>
+
+</body>
+</html>

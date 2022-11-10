@@ -1,0 +1,158 @@
+<%- include('head.ejs'); %>
+<!-- include extra files and title -->
+<link rel="stylesheet" href="/styles/home.css">
+<title>Home</title>
+
+</head>
+
+<!-- navbar included -->
+<%- include('nav.ejs');  %> 
+<section id="assesment" >
+    <div class="container-fluid">
+        <div class="row">
+        
+        <div class="left-container col-6">
+            <h1>Deliver Your Exams Online, with ExAssesment</h1>
+            <p >Create, send and analyze your tests, quizzes and assessments for free with ExAssesment</p>
+            <a class="butn" href="/register"> <span> Get started>></span></a>
+        </div>
+        <div class="right-container col-6">
+            <img src="/images/assesment-bg.png" class="img-fluid " alt="assesment image">
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- features -->
+<section id="features" >
+    <div class="row text-center container-fluid">
+        <div class="col-lg-4">
+            <img src="/images/create.png" class="features-img" alt="create paper">
+            <h3>Create</h3>
+            <p>Quickly create great looking tests using multiple question types and formatting options.</p>
+        </div>
+        <div class="col-lg-4">
+            <img src="/images/upload.png" class="features-img" alt="Publish">
+            <h3>Publish</h3>
+            <p>Tests can either be published privately to a select group or open them up to everyone with a single link and registration page.</p>
+        </div>
+        <div class="col-lg-4">
+            <img src="/images/trends.png" class="features-img" alt="analyze">
+            <h3>Analyze</h3>
+            <p>FlexiQuiz instantly marks and grades your tests. Powerful reports then allow you to perform in-depth analysis across all responses.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="question-bank" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="left-container col-6">
+                <img src="/images/uploadqbg.png" class="img-fluid " alt="assesment image">
+            </div>
+        <div class="right-container col-5 ">
+            <h2>Contribute to Question Bank</h2>
+            <p >Help us in creating a large pool of Question Bank by sharing and uploading your Questions with us.</p>
+            
+            <a class="butn" href="/register"><span> Join as student</span></a>
+            <a class="butn" href="/register"><span> Join as Teacher</span></a>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<section id="why" class="bg-primary">
+    <div class="container-fluid text-center justify-content-center">
+    <h3 my-4>Why choose ExAssesment</h3>
+    <div class="row text-start">
+        <div class="col-lg-4 col-sm-6">
+            <div class="row">
+            <div class="col-2 my-auto">
+                <i class="fa-solid fa-earth-americas fa-2x "></i>
+            </div>
+            <div class="col-10">
+                <h5>Access anywhere</h5>
+                <p>Being online allows you and your respondents to access, administer and take your quizzes from anywhere at anytime.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-6">
+        <div class="row">
+            <div class="col-2 my-auto">
+                <i class="fa-regular fa-circle-check fa-2x"></i>
+            </div>
+            <div class="col-10">
+                <h5>Auto-grading</h5>
+                <p>ExAssesment can automatically mark and grade your assessments, saving you the time to concentrate on whats important.</p>
+            </div>
+        </div>
+    </div>
+        <div class="col-lg-4 col-6">
+            <div class="row">
+                <div class="col-2 my-auto">
+                    <i class="fa-solid fa-hourglass-half fa-2x"></i>
+                </div>
+                <div class="col-10">
+                    <h5>Timed tests</h5>
+                    <p>With ExAssesment it is easy to set a time limit or allow your learners an unlimited amount of time to complete your assessment.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-6">
+            <div class="row">
+                <div class="col-2 my-auto">
+                    <i class="fa-solid fa-eye-slash fa-2x"></i>
+                </div>
+                <div class="col-10">
+                    <h5>Public and Private quizzes</h5>
+                    <p>Tests can either be published privately to a select group or open them up to everyone with a single link and registration page.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-6">
+            <div class="row">
+                <div class="col-2 my-auto">
+                    <i class="fa-solid fa-book fa-2x"></i>
+
+                </div>
+                <div class="col-10">
+                    <h5>Question Bank Contribution</h5>
+                    <p>Contribute by providing questions to create a large pool of questions as a student. Teachers can also contribute by evaluating the questions submitted by students and adding them to Question Bank.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</section>
+
+<section id="who">
+    <div class="container-fluid text-center">
+        <h3>Who uses ExAssesment</h3>
+        <div class="row">
+            <div class="col-6">
+                <i class="fa-solid fa-user-graduate fa-2x"></i>
+                <h3>Student</h3>
+                <p>Quickly and easily can appear in quizzes and get result analysis. Can contribute to question bank by submitting questions with the options and the correct answer</p>
+                <a href="/register" class="butn"><span> Register</span></a>
+                <a href="/login" class="butn"><span> Login</span></a>
+            </div>
+            <div class="col-6">
+                <i class="fa-solid fa-person-chalkboard fa-2x"></i>
+                <h3>Teacher</h3>
+                <p>Quickly generate a test paper with a timer to conduct the exams and can also automatically get the final grade of all the students. Contribute to Question Bank by evaluating the questions submitted by the students.</p>
+                <a class="butn" href="/register"><span> Register</span></a>
+                <a class="butn" href="/login#teacher"><span> Login</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</div>
+<%- include('footer.ejs') %> 
+
+</body>
+</html>

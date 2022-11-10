@@ -1,0 +1,97 @@
+<%- include('head.ejs'); %>
+<!-- include extra files and title -->
+<title>Login</title>
+<link rel="stylesheet" href="/styles/loginstyle.css">
+
+</head>
+
+<!-- navbar included -->
+<%- include('nav.ejs');  %> 
+
+<section id="login" >
+    <div class="container-fluid h-custom">
+      <div>
+        <h1 class="title"><span id="occupation">Student</span> Login</h1>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <!-- left panel  -->
+        <div class="col-md-6 col-lg-4 col-xl-4 my-lg-2 py-lg-2 left-panel text-center ">
+          <!-- image change -->
+          <img src="/images/Student.png" class="img-fluid  login-image"
+            alt="image corressponding to respective login page">
+        </div>
+
+        <!-- right panel  -->
+        <div class="col-md-8 col-lg-6 col-xl-6 my-lg-2 py-lg-2 right-panel px-4">
+          
+            <div class="d-flex flex-column justify-content-center justify-content-lg-start">
+              <!-- buttons for login linjkedin and google  -->
+              <button type="button" class="btn btn-primary btn-floating mx-1 my-2">
+                <i class="fa-brands fa-google login-icon"></i> Continue with
+                google
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-linkedin-in login-icon"></i> Continue with
+                Linkedin
+              </button>
+            </div>
+
+            <div class="divider text-center my-4">
+              <p class="fw-bold">Or</p>
+            </div>
+
+            <!-- Email input -->
+            <form action="/login" method="post">
+
+            <div class="form-outline mb-4">
+
+              <input type="email" name="emailId" id="emailid" class="form-control form-control-lg  inputs"
+                placeholder="Enter a valid email address">
+
+            </div>
+
+            <!-- Password input -->
+
+            <div class="form-outline mb-3">
+              <input type="password" name="password" id="password" class="form-control form-control-lg inputs"
+                placeholder="Enter password">
+            </div>
+          
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" name="rememberMe" type="checkbox" value="" id="remember-me" />
+                <label class="form-check-label" for="remember-me">
+                  Remember me
+                </label>
+              </div>
+            
+              <a href="#!">Forgot password?</a>
+            </div>
+
+            <div class="text-center mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem">
+                Login
+              </button>
+            </form>
+              <p class="small fw-bold mt-2 pt-1 mb-0">
+                Don't have an account?
+                <a href="/register" onclick="toggleLoginRegister()">Register</a>
+                <br>
+
+                <!-- change this  -->
+                <a href="#" id="toggle-login-page" onclick="toggleStudentTeacherLogin()">Login as Teacher</a>
+              </p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<%- include('footer.ejs') %> 
+<script src="/js/login.js"></script>
+</body>
+</html>
